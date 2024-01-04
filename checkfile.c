@@ -17,5 +17,6 @@ int checkfile(char *str)
 	else
 	{
 		checkline(fd, str); }
+	fclose(fd);
 	return (0);
 }

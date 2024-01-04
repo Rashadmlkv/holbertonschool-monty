@@ -17,8 +17,7 @@ void push(stack_t **stack, unsigned int line_number)
 		free(*stack);
 		exit(EXIT_FAILURE); }
 
-	if (((strcmp(glob.num, "0") != 0) && atoi(glob.num) == 0)
-	    || strcmp(glob.num, "") == 0)
+	if (isNumber(glob.num) == 0)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		free(new_node);
