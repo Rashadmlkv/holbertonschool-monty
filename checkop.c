@@ -8,7 +8,7 @@
  */
 void (*checkop(char *str, unsigned int line_number))(stack_t **, unsigned int)
 {
-	int i;
+	int i = 0;
 	instruction_t ops[] = {
 		{"push", push},
 		{"pall", pall},

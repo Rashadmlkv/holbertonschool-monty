@@ -9,11 +9,11 @@
  */
 int checkline(FILE *fd, char *str)
 {
-	int i;
+	int i = 0;
 	size_t max = 0;
 	char *token = NULL;
-	void (*f)(stack_t **stack, unsigned int line_number);
 	stack_t *top = malloc(sizeof(stack_t));
+	void (*f)(stack_t **stack, unsigned int line_number);
 
 	for (i = 1; (getline(&str, &max, fd)) != -1; i++)
 	{

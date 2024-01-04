@@ -7,7 +7,7 @@
  */
 int checkfile(char *str)
 {
-	FILE *fd;
+	FILE *fd = 0;
 
 	fd = fopen(str, "r");
 	if (!fd)
