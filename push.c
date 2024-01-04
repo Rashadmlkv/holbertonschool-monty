@@ -13,7 +13,7 @@ void push(stack_t **stack, unsigned int line_number)
 	if (!new_node)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
-	        freeStack(*stack);
+		freeStack(*stack);
 		exit(EXIT_FAILURE); }
 
 	if (isNumber(glob.num) == 0 || strcmp(glob.num, "") == 0)
@@ -22,7 +22,7 @@ void push(stack_t **stack, unsigned int line_number)
 		freeStack(*stack);
 		exit(EXIT_FAILURE); }
 
-        new_node->n = atoi(glob.num);
+	new_node->n = atoi(glob.num);
 	new_node->prev = NULL;
 	new_node->next = *stack;
 
