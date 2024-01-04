@@ -23,7 +23,9 @@ int checkline(FILE *fd, char *str)
 			f = checkop(token, i);
 			token = strtok(NULL, " \t$\n");
 			if (token)
-				num = token;
+			{
+				glob.num = token;
+			}
 			f(&top, i);
 		}
 	}

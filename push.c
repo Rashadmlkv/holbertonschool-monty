@@ -13,18 +13,19 @@ void push(stack_t **stack, unsigned int line_number)
 	if (!new_node)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
-	        free(new_node);
+		free(new_node);
 		free(*stack);
-	        exit(EXIT_FAILURE); }
+		exit(EXIT_FAILURE); }
 
-	if (((strcmp(num, "0") != 0) && atoi(num) == 0) || strcmp(num, "") == 0)
+	if (((strcmp(glob.num, "0") != 0) && atoi(glob.num) == 0)
+	    || strcmp(glob.num, "") == 0)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		free(new_node);
-                free(*stack);
+		free(*stack);
 		exit(EXIT_FAILURE); }
 
-	new_node->n = atoi(num);
+	new_node->n = atoi(glob.num);
 	new_node->prev = NULL;
 	new_node->next = *stack;
 
