@@ -1,6 +1,4 @@
 #include "monty.h"
-
-
 /**
  * push - pushes data into stack
  * @stack: top of stack
@@ -28,6 +26,5 @@ void push(stack_t **stack, unsigned int line_number)
 
 	if (*stack)
 		(*stack)->prev = new_node;
-
 	*stack = new_node;
 }
