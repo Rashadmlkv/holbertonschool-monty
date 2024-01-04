@@ -29,5 +29,6 @@ int checkline(FILE *fd, char *str)
 			f(&top, i);
 		}
 	}
+	freeStack(top);
 	return (0);
 }
