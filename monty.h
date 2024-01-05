@@ -41,8 +41,9 @@ typedef struct instruction_s
  */
 typedef struct globvar
 {
-	stack_t *top;
 	char *num;
+	void (*f)(stack_t **stack, unsigned int line_number);
+	stack_t *top;
 } global;
 global glob;
 

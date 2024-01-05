@@ -6,7 +6,7 @@
  */
 void freeStack(void)
 {
-	stack_t *temp;
+	stack_t *temp = NULL;
 
 	while (glob.top)
 	{

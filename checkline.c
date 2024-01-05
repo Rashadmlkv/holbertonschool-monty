@@ -13,20 +13,20 @@ int checkline(FILE *fd, char *str)
 	size_t max = 0;
 	char *token = NULL;
 	glob.top = malloc(sizeof(stack_t));
-	void (*f)(stack_t **stack, unsigned int line_number);
+	glob.top = NULL;
 
 	for (i = 1; (getline(&str, &max, fd)) != -1; i++)
 	{
 		token = strtok(str, " \t$\n");
 		if (token)
 		{
-			f = checkop(token, i);
+			glob.f = checkop(token, i);
 			token = strtok(NULL, " \t$\n");
 			if (token)
 			{
 				glob.num = token;
 			}
-			f(&glob.top, i);
+			glob.f(&glob.top, i);
 		}
 	}
 	freeStack();
