@@ -1,5 +1,4 @@
 #include "monty.h"
-
 /**
  * main - check input arguments
  * @ac: argument count
@@ -15,5 +14,6 @@ int main(int ac, char **av)
 	}
 	else
 		checkfile(av[1]);
+	freeStack();
 	return (0);
 }

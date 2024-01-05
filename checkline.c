@@ -1,13 +1,11 @@
 #include "monty.h"
-
-
 /**
  * checkline - parses line & pushes into checkop & execute if success
  * @fd: file description
  * @str: filename
  * Return: doesn't
  */
-int checkline(FILE *fd, char *str)
+int checkline(FILE *fd)
 {
 	int i = 0;
 	size_t max = 0;
@@ -15,9 +13,9 @@ int checkline(FILE *fd, char *str)
 	glob.top = malloc(sizeof(stack_t));
 	glob.top = NULL;
 
-	for (i = 1; (getline(&str, &max, fd)) != -1; i++)
+	for (i = 1; (getline(&glob.buffer, &max, fd)) != -1; i++)
 	{
-		token = strtok(str, " \t$\n");
+		token = strtok(glob.buffer, " \t$\n");
 		if (token)
 		{
 			glob.f = checkop(token, i);
@@ -27,6 +25,5 @@ int checkline(FILE *fd, char *str)
 			glob.f(&glob.top, i);
 		}
 	}
-	freeStack();
 	return (0);
 }

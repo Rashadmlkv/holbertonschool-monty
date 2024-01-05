@@ -41,14 +41,15 @@ typedef struct instruction_s
  */
 typedef struct globvar
 {
-	char *num;
+	char *num, *buffer;
+	FILE *fd;
 	void (*f)(stack_t **stack, unsigned int line_number);
 	stack_t *top;
 } global;
 global glob;
 
 int checkfile(char *str);
-int checkline(FILE *fd, char *str);
+int checkline(FILE *fd);
 void (*checkop(char *str, unsigned int line_number))(stack_t **, unsigned int);
 int isNumber(char *number);
 void freeStack(void);

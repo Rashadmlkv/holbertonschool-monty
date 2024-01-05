@@ -11,10 +11,10 @@ void freeStack(void)
 	while (glob.top)
 	{
 		temp = glob.top;
+		printf("Clean: %d\n", temp->n);
 		glob.top = glob.top->next;
 		free(temp);
 	}
 	free(glob.top);
-	temp = NULL;
-	free(temp);
+        free(glob.buffer);
 }

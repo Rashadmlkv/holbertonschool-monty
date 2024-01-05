@@ -1,5 +1,4 @@
 #include "monty.h"
-
 /**
  * checkfile - checks file status
  * @str: filename
@@ -7,16 +6,16 @@
  */
 int checkfile(char *str)
 {
-	FILE *fd = 0;
+	glob.fd = fopen(str, "r");
 
-	fd = fopen(str, "r");
-	if (!fd)
+	if (!glob.fd)
 	{
-		fprintf(stderr, "Error: Can't open file %s\n", str),
-			exit(EXIT_FAILURE); }
+		fprintf(stderr, "Error: Can't open file %s\n", str);
+		freeStack();
+		exit(EXIT_FAILURE); }
 	else
 	{
-		checkline(fd, str); }
-	fclose(fd);
+		checkline(glob.fd); }
+	fclose(glob.fd);
 	return (0);
 }
