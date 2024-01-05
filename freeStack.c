@@ -4,14 +4,14 @@
  * freeStack - frees a stack
  * @stack: top of stack
  */
-void freeStack(stack_t *stack)
+void freeStack(void)
 {
 	stack_t *temp;
 
-	while (stack)
+	while (glob.top)
 	{
-		temp = stack;
-		stack = stack->next;
+		temp = glob.top;
+		glob.top = glob.top->next;
 		free(temp);
 	}
 }

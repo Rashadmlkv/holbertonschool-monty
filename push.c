@@ -11,13 +11,13 @@ void push(stack_t **stack, unsigned int line_number)
 	if (!new_node)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
-		freeStack(*stack);
+		freeStack();
 		exit(EXIT_FAILURE); }
 
 	if (isNumber(glob.num) == 0 || strcmp(glob.num, "") == 0)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
-		freeStack(*stack);
+		freeStack();
 		exit(EXIT_FAILURE); }
 
 	new_node->n = atoi(glob.num);
