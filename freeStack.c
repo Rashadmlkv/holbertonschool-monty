@@ -14,5 +14,4 @@ void freeStack(void)
 	}
 	free(glob.top);
 	free(glob.buffer);
-	fclose(glob.fd);
 }

@@ -16,5 +16,6 @@ int checkfile(char *str)
 	else
 	{
 		checkline(glob.fd); }
+	fclose(glob.fd);
 	return (0);
 }
