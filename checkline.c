@@ -9,9 +9,9 @@ int checkline(FILE *fd)
 {
 	int i = 0;
 	size_t max = 0;
-	char *token = NULL;
+	char *token = NULL;/*
 	glob.top = malloc(sizeof(stack_t));
-	glob.top = NULL;
+	glob.top = NULL;*/
 
 	for (i = 1; (getline(&glob.buffer, &max, fd)) != -1; i++)
 	{
