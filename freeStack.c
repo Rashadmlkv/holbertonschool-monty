@@ -14,4 +14,6 @@ void freeStack(void)
 		glob.top = glob.top->next;
 		free(temp);
 	}
+	temp = NULL;
+	free(temp);
 }

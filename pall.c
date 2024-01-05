@@ -11,10 +11,11 @@ void pall(stack_t **stack, unsigned int line_number)
 	stack_t *temp = *stack;
 
 
-	if ((*stack)->next == NULL)
-		;
-	else
+	if (*stack)
 	{
 		for (; temp->next != NULL; temp = temp->next)
-			printf("%d\n", temp->n); }
+			printf("%d\n", temp->n);
+	}
+	temp = NULL;
+	free(temp);
 }

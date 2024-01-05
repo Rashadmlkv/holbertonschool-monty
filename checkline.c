@@ -29,6 +29,7 @@ int checkline(FILE *fd, char *str)
 			glob.f(&glob.top, i);
 		}
 	}
+	printf("aaaa\n");
 	freeStack();
 	return (0);
 }
