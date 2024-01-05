@@ -1,8 +1,6 @@
 #include "monty.h"
-
 /**
  * freeStack - frees a stack
- * @stack: top of stack
  */
 void freeStack(void)
 {
@@ -15,5 +13,5 @@ void freeStack(void)
 		free(temp);
 	}
 	free(glob.top);
-        free(glob.buffer);
+	free(glob.buffer);
 }

@@ -38,6 +38,10 @@ typedef struct instruction_s
 /**
  * struct globvar - betty global variable warning bypass
  * @num: number
+ * @buffer: getline will use it
+ * @fd: file descripto
+ * @f: function pointer
+ * @top: stack
  */
 typedef struct globvar
 {
@@ -47,7 +51,6 @@ typedef struct globvar
 	stack_t *top;
 } global;
 global glob;
-
 int checkfile(char *str);
 int checkline(FILE *fd);
 void (*checkop(char *str, unsigned int line_number))(stack_t **, unsigned int);
