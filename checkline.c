@@ -23,13 +23,10 @@ int checkline(FILE *fd, char *str)
 			glob.f = checkop(token, i);
 			token = strtok(NULL, " \t$\n");
 			if (token)
-			{
 				glob.num = token;
-			}
 			glob.f(&glob.top, i);
 		}
 	}
-	printf("aaaa\n");
 	freeStack();
 	return (0);
 }
