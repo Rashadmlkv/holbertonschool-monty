@@ -10,7 +10,7 @@ int checkline(FILE *fd)
 	size_t max = 0;
 	char *token = NULL;
 
-	for (i = 1; (getline(&glob.buffer, &max, fd)) != -1; i++)
+	for (i = 1; (getline(&glob.buffer, &max, fd)) > 0; i++)
 	{
 		token = strtok(glob.buffer, " \t$\n");
 		if (token)
