@@ -11,7 +11,7 @@ int isNumber(char *number)
 	for (i = 0; number[i] != '\0'; i++)
 	{
 		if(i == 0 && number[0] == '-')
-			++i;
+			continue;
 		if ((isdigit(number[i])) == 0)
 			return (-1); }
 	return (0);
