@@ -17,7 +17,8 @@ int checkline(FILE *fd)
 		{
 			glob.f = checkop(token, linenumber);
 			token = strtok(NULL, " \t\n");
-			glob.num = token;
+			if (token)
+				glob.num = token;
 			glob.f(&glob.top, linenumber);
 		}
 	}
