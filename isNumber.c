@@ -10,6 +10,8 @@ int isNumber(char *number)
 
 	for (i = 0; number[i] != '\0'; i++)
 	{
+		if(number[i] == '-')
+			i++;
 		if ((isdigit(number[i])) == 0)
 			return (0); }
 	return (-1);
