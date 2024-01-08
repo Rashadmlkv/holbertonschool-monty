@@ -11,7 +11,6 @@ void pint(stack_t **stack, unsigned int line_number)
 	if (!stack)
 	{
 		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
-		freeStack();
 		fclose(glob.fd);
 		exit(EXIT_FAILURE);
 	}
