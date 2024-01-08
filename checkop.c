@@ -18,7 +18,7 @@ void (*checkop(char *str, unsigned int line_number))(stack_t **, unsigned int)
 	{
 		if (ops[i + 1].opcode == NULL && ops[i].opcode != str)
 		{
-			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, str);
+			fprintf(stderr, "L%u: unknown instruction %s\n", line_number, str);
 			freeStack();
 			fclose(glob.fd);
 			exit(EXIT_FAILURE);

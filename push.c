@@ -10,7 +10,7 @@ void push(stack_t **stack, unsigned int line_number)
 
 	if (isNumber(glob.num) == -1)
 	{
-		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		freeStack();
 		fclose(glob.fd);
 		exit(EXIT_FAILURE); }
