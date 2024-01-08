@@ -1,4 +1,5 @@
 #include "monty.h"
+global glob;
 /**
  * main - check input arguments
  * @ac: argument count
