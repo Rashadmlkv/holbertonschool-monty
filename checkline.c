@@ -6,20 +6,20 @@
  */
 int checkline(FILE *fd)
 {
-	int i = 0;
+	unsigned int linenumber = 0;
 	size_t max = 0;
 	char *token = NULL;
 
-	for (i = 1; (getline(&glob.buffer, &max, fd)) > 0; i++)
+	for (linenumber = 1; (getline(&glob.buffer, &max, fd)) > 0; linenumber++)
 	{
 		token = strtok(glob.buffer, " \t\n");
 		if (token)
 		{
-			glob.f = checkop(token, i);
+			glob.f = checkop(token, linenumber);
 			token = strtok(NULL, " \t\n");
 			if (token)
 				glob.num = token;
-			glob.f(&glob.top, i);
+			glob.f(&glob.top, linenumber);
 		}
 	}
 	return (0);
