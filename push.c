@@ -12,7 +12,6 @@ void push(stack_t **stack, unsigned int line_number)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		freeStack();
-		fclose(glob.fd);
 		exit(EXIT_FAILURE); }
 
 	new_node = malloc(sizeof(stack_t));
@@ -20,7 +19,6 @@ void push(stack_t **stack, unsigned int line_number)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		freeStack();
-		fclose(glob.fd);
 		exit(EXIT_FAILURE); }
 
 	new_node->n = atoi(glob.num);

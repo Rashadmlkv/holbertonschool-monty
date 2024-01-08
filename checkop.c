@@ -20,7 +20,6 @@ void (*checkop(char *str, unsigned int line_number))(stack_t **, unsigned int)
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, str);
 			freeStack();
-			fclose(glob.fd);
 			exit(EXIT_FAILURE);
 		}
 	}
