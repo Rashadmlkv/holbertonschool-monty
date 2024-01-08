@@ -16,6 +16,6 @@ int checkfile(char *str)
 	else
 	{
 		checkline(glob.fd); }
-	freeStack();
+	fclose(glob.fd);
 	return (0);
 }
