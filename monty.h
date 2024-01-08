@@ -50,7 +50,7 @@ typedef struct globvar
 	void (*f)(stack_t **stack, unsigned int line_number);
 	stack_t *top;
 } global;
-global glob;
+extern global glob;
 int checkfile(char *str);
 int checkline(FILE *fd);
 void (*checkop(char *str, unsigned int line_number))(stack_t **, unsigned int);
