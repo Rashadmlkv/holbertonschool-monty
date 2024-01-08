@@ -8,8 +8,6 @@ int isNumber(char *number)
 {
 	int i = 0;
 
-	if (number[i] == '-')
-		++i;
 	for (; number[i] != '\0'; i++)
 	{
 		if ((isdigit(number[i])) == 0)
