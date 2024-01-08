@@ -12,6 +12,6 @@ void pall(stack_t **stack, unsigned int line_number)
 	if (*stack)
 	{
 		for (; temp != NULL; temp = temp->next)
-			printf("%d\n", temp->n);
+			fprintf(stdout,"%d\n", temp->n);
 	}
 }
