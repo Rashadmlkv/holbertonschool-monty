@@ -2,7 +2,7 @@
 /**
  * isNumber - check string is full of numbers or not
  * @number: string
- * Return: if string is not number return 0
+ * Return: if string is not number return -1
  */
 int isNumber(char *number)
 {
@@ -13,6 +13,6 @@ int isNumber(char *number)
 		if(i == 0 && number[0] == '-')
 			++i;
 		if ((isdigit(number[i])) == 0)
-			return (0); }
-	return (-1);
+			return (-1); }
+	return (0);
 }
