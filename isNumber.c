@@ -10,7 +10,9 @@ int isNumber(char *number)
 
 	for (i = 0; number[i] != '\0'; i++)
 	{
-		if ((isdigit(number[i])) == 0 && number[0] != '-')
+		if(number[0] == '-')
+			i++;
+		if ((isdigit(number[i])) == 0)
 			return (-1); }
 	return (0);
 }
