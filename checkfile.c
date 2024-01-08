@@ -12,6 +12,7 @@ int checkfile(char *str)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", str);
 		freeStack();
+		fclose(glob.fd);
 		exit(EXIT_FAILURE); }
 	else
 	{

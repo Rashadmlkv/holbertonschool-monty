@@ -11,6 +11,9 @@ void (*checkop(char *str, unsigned int line_number))(stack_t **, unsigned int)
 	instruction_t ops[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
+		{"pop", pop},
+		{"swap", swap},
 		{NULL, NULL}
 	};
 

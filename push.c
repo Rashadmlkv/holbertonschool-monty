@@ -8,7 +8,7 @@ void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node;
 
-	if (isNumber(glob.num) == 0 || strcmp(glob.num, "") == 0)
+	if (isNumber(glob.num) == -1 || strcmp(glob.num, "") == 0)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		freeStack();
