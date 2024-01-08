@@ -1,6 +1,1 @@
-push 0
-push 1
-push 2
-pint
-swap
-pint
+push -12-
