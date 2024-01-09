@@ -54,6 +54,8 @@ void (*checkOp(char *str, unsigned int line_number))(stack_t **, unsigned int)
 		{"push", push},
 		{"pall", pall},
 		{"pint", pint},
+		{"pop", pop},
+		{"swap", swap},
 		{NULL, NULL}
 	};
 
