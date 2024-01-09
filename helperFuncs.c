@@ -6,21 +6,19 @@
  * @ac: arguments' count
  * @av: arguments' array
  */
-void checkFile(int ac, char **av)
+int checkFile(int ac, char **av)
 {
 	if (ac != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
-		freeStack();
 		exit(EXIT_FAILURE); }
 
 	glob.fd = fopen(av[1], "r");
 	if (!glob.fd)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", av[1]);
-		freeStack();
 		exit(EXIT_FAILURE); }
-
+	return (0);
 }
 
 
@@ -61,8 +59,7 @@ void (*checkOp(char *str, unsigned int line_number))(stack_t **, unsigned int)
 			{
 				fprintf(stderr, "L%u: unknown instruction %s\n", line_number, str);
 				freeStack();
-				exit(EXIT_FAILURE);
-			}
+				exit(EXIT_FAILURE); }
 		}
 	return (ops[i].f);
 }
@@ -71,7 +68,7 @@ void (*checkOp(char *str, unsigned int line_number))(stack_t **, unsigned int)
 /**
  * freeStack - frees stack & closes file descriptor
  */
-void freeStack(void)
+int freeStack(void)
 {
 	stack_t *temp = NULL;
 
@@ -81,9 +78,9 @@ void freeStack(void)
 		glob.top = glob.top->next;
 		free(temp);
 	}
-	free(glob.top);
 	free(glob.buffer);
 	fclose(glob.fd);
+	return (0);
 }
 
 
