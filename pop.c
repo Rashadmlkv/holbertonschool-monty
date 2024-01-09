@@ -12,7 +12,7 @@ void pop(stack_t **stack, unsigned int line_number)
 	if (!stack || !(*stack))
 	{
 		fprintf(stderr,	"L%u: can't pop an empty stack\n", line_number);
-		freeStack();
+		fclose(glob.fd);
 		exit(EXIT_FAILURE);
 	}
 
