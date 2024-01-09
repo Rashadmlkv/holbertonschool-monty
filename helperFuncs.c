@@ -25,15 +25,20 @@ void checkFile(int ac, char **av)
  * checkLine - reads and parses the line
  * Return: getline's read status
  */
-int checkLine(void)
+void checkLine(void)
 {
 	size_t max = 0;
-	int r = 0;
+	unsigned int line_number = 1;
 
-	r = getline(&glob.buffer, &max, glob.fd);
-	if (r != -1)
+	for (; getline(&glob.buffer, &max, glob.fd) != -1; line_number++)
+        {
 		glob.token = strtok(glob.buffer, " \t\n");
-	return (r);
+                if (glob.token)
+                {
+                        glob.f = checkOp(glob.token, line_number);
+			glob.token = strtok(NULL, " \t\n");
+                        glob.f(&glob.top, line_number); }
+        }
 }
 
 

@@ -8,7 +8,6 @@ void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node;
 
-	glob.token = strtok(NULL, " \t\n");
 	if (isDigit(glob.token) == -1)
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);

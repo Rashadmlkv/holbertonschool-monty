@@ -61,9 +61,9 @@ global glob;
 
 
 void checkFile(int ac, char **av);
-int checkLine(void);
-int isDigit(char *number);
+void checkLine(void);
 void freeStack(void);
+int isDigit(char *number);
 void (*checkOp(char *str, unsigned int line_number))(stack_t **, unsigned int);
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
