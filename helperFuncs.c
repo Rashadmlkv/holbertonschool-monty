@@ -60,6 +60,7 @@ void (*checkOp(char *str, unsigned int line_number))(stack_t **, unsigned int)
 		{"nop", nop},
 		{"sub", sub},
 		{"div", division},
+		{"mul", mul},
 		{NULL, NULL}
 	};
 
