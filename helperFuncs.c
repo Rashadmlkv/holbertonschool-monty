@@ -5,6 +5,7 @@
  * checkFile - checks aviability of file & given argument
  * @ac: arguments' count
  * @av: arguments' array
+ * Return: 0
  */
 int checkFile(int ac, char **av)
 {
@@ -68,6 +69,7 @@ void (*checkOp(char *str, unsigned int line_number))(stack_t **, unsigned int)
 
 /**
  * freeStack - frees stack & closes file descriptor
+ * Return: 0
  */
 int freeStack(void)
 {
