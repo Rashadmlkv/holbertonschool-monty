@@ -11,14 +11,12 @@ void checkFile(int ac, char **av)
 	if (ac != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
-		freeStack();
 		exit(EXIT_FAILURE); }
 
 	glob.fd = fopen(av[1], "r");
 	if (!glob.fd)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", av[1]);
-		freeStack();
 		exit(EXIT_FAILURE); }
 }
 
@@ -60,6 +58,7 @@ void (*checkOp(char *str, unsigned int line_number))(stack_t **, unsigned int)
 			{
 				fprintf(stderr, "L%u: unknown instruction %s\n", line_number, str);
 				freeStack();
+				fclose(glob.fd);
 				exit(EXIT_FAILURE);
 			}
 		}
