@@ -52,17 +52,18 @@ typedef struct instruction_s
 typedef struct globvar
 {
 	char *buffer, *token;
+	FILE *fd;
 	void (*f)(stack_t **stack, unsigned int line_number);
 	stack_t *top;
-	FILE *fd;
 } global;
-extern global glob;
 global glob;
+extern global glob;
 
-int checkFile(int ac, char **av);
+
+void checkFile(int ac, char **av);
 int checkLine(void);
 int isDigit(char *number);
-int freeStack(void);
+void freeStack(void);
 void (*checkOp(char *str, unsigned int line_number))(stack_t **, unsigned int);
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);

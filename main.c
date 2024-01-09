@@ -15,10 +15,10 @@ int main(int ac, char **av)
 	{
 		if (glob.token)
 		{
+			printf("%s\n", glob.token);
 			glob.f = checkOp(glob.token, line_number);
 			glob.f(&glob.top, line_number); }
 	}
 	freeStack();
-	fclose(glob.fd);
 	return (0);
 }
