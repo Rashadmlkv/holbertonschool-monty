@@ -58,6 +58,8 @@ typedef struct globvar
 } global;
 extern global glob;
 global glob;
+
+
 void checkFile(int ac, char **av);
 int checkLine(void);
 int isDigit(char *number);
