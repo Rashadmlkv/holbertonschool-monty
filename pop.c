@@ -15,9 +15,9 @@ void pop(stack_t **stack, unsigned int line_number)
 		fclose(glob.fd);
 		exit(EXIT_FAILURE);
 	}
-	tmp = *stack;
+	temp = *stack;
 	*stack = (*stack)->next;
+	free(temp);
 	if (*stack)
 		(*stack)->prev = NULL;
-	free(tmp);
 }
