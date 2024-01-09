@@ -56,10 +56,8 @@ typedef struct globvar
 	void (*f)(stack_t **stack, unsigned int line_number);
 	stack_t *top;
 } global;
-global glob;
 extern global glob;
-
-
+global glob;
 void checkFile(int ac, char **av);
 int checkLine(void);
 int isDigit(char *number);
