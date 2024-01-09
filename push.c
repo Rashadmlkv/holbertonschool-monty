@@ -21,7 +21,6 @@ void push(stack_t **stack, unsigned int line_number)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		freeStack();
-		free(glob.buffer);
 		fclose(glob.fd);
 		exit(EXIT_FAILURE); }
 
