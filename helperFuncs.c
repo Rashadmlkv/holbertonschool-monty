@@ -20,7 +20,6 @@ void checkFile(int ac, char **av)
 		fprintf(stderr, "Error: Can't open file %s\n", av[1]);
 		freeStack();
 		exit(EXIT_FAILURE); }
-
 }
 
 
@@ -35,9 +34,7 @@ int checkLine(void)
 
 	r = getline(&glob.buffer, &max, glob.fd);
 	if (r != -1)
-	{
-		printf("Command: %s", glob.buffer);
-		glob.token = strtok(glob.buffer, " \t\n"); }
+		glob.token = strtok(glob.buffer, " \t\n");
 	return (r);
 }
 
