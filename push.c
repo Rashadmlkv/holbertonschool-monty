@@ -12,7 +12,7 @@ void push(stack_t **stack, unsigned int line_number)
 	if (isDigit(glob.token) == -1)
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
-		freeStack();;
+		freeStack();
 		exit(EXIT_FAILURE); }
 
 	new_node = malloc(sizeof(stack_t));
