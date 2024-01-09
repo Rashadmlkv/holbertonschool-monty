@@ -9,7 +9,7 @@
 int main(int ac, char **av)
 {
 	checkFile(ac, av);
-        checkLine();
+	checkLine();
 	freeStack();
 	fclose(glob.fd);
 	return (0);

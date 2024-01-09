@@ -31,14 +31,14 @@ void checkLine(void)
 	unsigned int line_number = 1;
 
 	for (; getline(&glob.buffer, &max, glob.fd) != -1; line_number++)
-        {
+	{
 		glob.token = strtok(glob.buffer, " \t\n");
-                if (glob.token)
-                {
-                        glob.f = checkOp(glob.token, line_number);
+		if (glob.token)
+		{
+			glob.f = checkOp(glob.token, line_number);
 			glob.token = strtok(NULL, " \t\n");
-                        glob.f(&glob.top, line_number); }
-        }
+			glob.f(&glob.top, line_number); }
+	}
 }
 
 
