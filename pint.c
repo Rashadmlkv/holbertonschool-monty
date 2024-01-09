@@ -10,9 +10,9 @@ void pint(stack_t **stack, unsigned int line_number)
 {
 	if (!stack)
 	{
-		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+		fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
 		fclose(glob.fd);
 		exit(EXIT_FAILURE);
 	}
-	printf("%d\n", (*stack)->n);
+	fprintf(stdout,"%d\n", (*stack)->n);
 }
