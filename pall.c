@@ -1,4 +1,5 @@
 #include "monty.h"
+
 /**
  * pall - prints datas in stack
  * @stack: top of stack
@@ -12,6 +13,6 @@ void pall(stack_t **stack, unsigned int line_number)
 	if (*stack)
 	{
 		for (; temp != NULL; temp = temp->next)
-			fprintf(stdout,"%d\n", temp->n);
+			fprintf(stdout, "%d\n", temp->n);
 	}
 }

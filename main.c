@@ -1,20 +1,24 @@
 #include "monty.h"
-global glob;
+
 /**
- * main - check input arguments
- * @ac: argument count
- * @av: array of arguments
- * Return: doesn't
+ * main - Monty Interpreter
+ * @ac: arcuments' count
+ * @av: arguments' array
+ * Return: 0 if no error during runtime
  */
 int main(int ac, char **av)
 {
-	if (ac != 2)
+	unsigned int line_number = 1;
+
+	checkFile(ac, av);
+	for (; checkLine() != -1; line_number++)
 	{
-		fprintf(stderr, "USAGE: monty file\n");
-		exit(EXIT_FAILURE);
+		if (glob.token)
+		{
+			printf("%s\n", glob.token);
+			glob.f = checkOp(glob.token, line_number);
+			glob.f(&glob.top, line_number); }
 	}
-	else
-		checkfile(av[1]);
 	freeStack();
 	return (0);
 }

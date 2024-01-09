@@ -7,6 +7,8 @@
 #include <unistd.h>
 #include <string.h>
 #include <ctype.h>
+
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -22,6 +24,8 @@ typedef struct stack_s
 	struct stack_s *prev;
 	struct stack_s *next;
 } stack_t;
+
+
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -35,33 +39,33 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+
 /**
- * struct globvar - betty global variable warning bypass
- * @num: number
- * @buffer: getline will use it
- * @fd: file descripto
- * @f: function pointer
+ * struct globvar - decleration
+ * @buffer: string buffer for getline
+ * @token: string buffer for strok
+ * @fd: file descriptor
+ * @f: function pointer for checkop
  * @top: stack
  */
 typedef struct globvar
 {
-	char *num, *buffer;
+	char *buffer, *token;
 	FILE *fd;
 	void (*f)(stack_t **stack, unsigned int line_number);
 	stack_t *top;
 } global;
+global glob;
 extern global glob;
-int checkfile(char *str);
-int checkline(FILE *fd);
-void (*checkop(char *str, unsigned int line_number))(stack_t **, unsigned int);
-int isNumber(char *number);
+
+
+void checkFile(int ac, char **av);
+int checkLine(void);
+int isDigit(char *number);
 void freeStack(void);
+void (*checkOp(char *str, unsigned int line_number))(stack_t **, unsigned int);
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
-void pint(stack_t **stack, unsigned int line_number);
-void pop(stack_t **stack, unsigned int line_number);
-void swap(stack_t **stack, unsigned int line_number);
-void add(stack_t **stack, unsigned int line_number);
-void nop(stack_t **stack, unsigned int line_number);
 
 #endif
