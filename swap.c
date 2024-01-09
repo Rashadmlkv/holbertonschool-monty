@@ -16,7 +16,7 @@ void swap(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	tmp = malloc(sizeof(stack_t));
-	if(!tmp)
+	if (!tmp)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		freeStack();

@@ -14,5 +14,5 @@ void pint(stack_t **stack, unsigned int line_number)
 		fclose(glob.fd);
 		exit(EXIT_FAILURE);
 	}
-	fprintf(stdout,"%d\n", (*stack)->n);
+	fprintf(stdout, "%d\n", (*stack)->n);
 }
