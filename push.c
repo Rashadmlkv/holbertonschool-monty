@@ -13,7 +13,6 @@ void push(stack_t **stack, unsigned int line_number)
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		freeStack();
-		free(glob.buffer);
 		fclose(glob.fd);
 		exit(EXIT_FAILURE); }
 
