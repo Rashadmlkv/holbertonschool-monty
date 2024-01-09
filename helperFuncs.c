@@ -59,6 +59,7 @@ void (*checkOp(char *str, unsigned int line_number))(stack_t **, unsigned int)
 			{
 				fprintf(stderr, "L%u: unknown instruction %s\n", line_number, str);
 				freeStack();
+				fclose(glob.fd);
 				exit(EXIT_FAILURE); }
 		}
 	return (ops[i].f);
@@ -79,7 +80,6 @@ int freeStack(void)
 		free(temp);
 	}
 	free(glob.buffer);
-	fclose(glob.fd);
 	return (0);
 }
 

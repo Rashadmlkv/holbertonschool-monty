@@ -19,5 +19,6 @@ int main(int ac, char **av)
 			glob.f(&glob.top, line_number); }
 	}
 	freeStack();
+	fclose(glob.fd);
 	return (0);
 }
